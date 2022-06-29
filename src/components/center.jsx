@@ -15,30 +15,18 @@ export default {
                 ],
                 baseChunk: [
                     {
-                        type: "chunk",
+                        type: "el-input",
                         name: 'radio',
-                        label: '单选框'
+                        label: '输入框'
                     },
                     {
-                        type: "chunk",
+                        type: "el-time-picker",
                         name: 'radio1',
-                        label: '单选框1'
+                        label: '时间选择'
                     }
                 ]
             },
             list: [
-                {
-                    type: 'block',
-                    name: 'block',
-                    children: [
-                        {
-                            type: "chunk",
-                            name: 'radio1',
-                            label: '单选框1'
-                        }
-                    ],
-                    label: 'block'
-                },
                 {
                     type: 'block',
                     name: 'block',
@@ -51,23 +39,6 @@ export default {
     components: {
         nestedDraggable,
         left
-    },
-    watch: {
-        list: {
-            deep: true,
-            immediate: true,
-            handler(value) {
-                console.log(value);
-            }
-
-        },
-        allComponents: {
-            deep: true,
-            immediate: true,
-            handler(value) {
-                console.log(value);
-            }
-        }
     },
     render(h) {
         return (

@@ -5,7 +5,11 @@
     .snapshot {
         width: 50%;
         height: 50px;
-        background-color: rosybrown;
+        background-color: rgb(140, 197, 255);
+        border-radius: 4px;
         margin: 3px 5px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 50px;
     }
 }

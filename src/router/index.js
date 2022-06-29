@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Simple from '../components/simple.jsx'
 import TransitionExample from '../components/transition-example.jsx'
-import NestedExample from '../components/nested-example.jsx'
+import NestedExample from '../components/center'
 import TwoLists from '../components/two-list.vue'
 
 Vue.use(VueRouter)
