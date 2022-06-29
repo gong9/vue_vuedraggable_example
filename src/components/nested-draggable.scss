@@ -1,12 +1,18 @@
 .container-node {
     border: 1px solid rgb(191, 224, 243);
+    padding: 10px 10px;
     width: 80%;
     min-height: 50px;
     position: relative;
 
     .node-leaf {
-        width: 200px;
+        padding: 10px 10px;
         height: 40px;
         background-color: rosybrown;
     }
+}
+
+.init-class {
+    min-height: 120px;
+    display: block;
 }

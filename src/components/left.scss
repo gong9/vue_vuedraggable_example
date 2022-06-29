@@ -1,0 +1,11 @@
+.snapshot-container {
+    display: flex;
+    width: 100%;
+
+    .snapshot {
+        width: 50%;
+        height: 50px;
+        background-color: rosybrown;
+        margin: 3px 5px;
+    }
+}

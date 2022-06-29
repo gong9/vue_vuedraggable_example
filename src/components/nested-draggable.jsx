@@ -14,10 +14,10 @@ export default {
     },
     render(h) {
         return (
-            <draggable class='container-node' tag="div" list={this.tasks} group={{ name: 'g1', put: true }}>
+            <draggable class={this.tasks.length === 0 ? 'init-class' : ''} tag="div" list={this.tasks} group={{ put: true }}>
                 {this.tasks.map(task => {
                     return (
-                        <div key={task.name}>
+                        <div>
                             {
                                 task.children ? <nestedDraggable tag="div" class="container-node" tasks={task.children} /> : <div class='node-leaf'> {task.name}</div>
                             }
