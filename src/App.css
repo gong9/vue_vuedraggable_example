@@ -1,8 +1,9 @@
-.app {
+.top {
   display: flex;
 }
-.left {
-  flex: 2;
+.top li{
+  margin-left: 10px;
+  list-style: none;
 }
 
 .right {

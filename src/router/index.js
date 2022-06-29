@@ -2,19 +2,31 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Simple from '../components/simple.jsx'
-import transitionExample from '../components/transition-example.jsx'
+import TransitionExample from '../components/transition-example.jsx'
+import NestedExample from '../components/nested-example.jsx'
+import TwoLists from '../components/two-list.vue'
 
 Vue.use(VueRouter)
 
 export const routes = [{
         path: '/simple',
         component: Simple,
-        label: '示例1：简单例子'
+        label: '示例1'
     },
     {
         path: '/transition-sexample',
-        component: transitionExample,
-        label: '示例2：简单例子'
+        component: TransitionExample,
+        label: '示例2'
+    },
+    {
+        path: '/nested-example',
+        component: NestedExample,
+        label: '示例3'
+    },
+    {
+        path: '/two-list',
+        component: TwoLists,
+        label: '示例4'
     },
 ]
 

@@ -5,7 +5,7 @@ export default {
   render(h) {
     return (
       <div class="app">
-        <ul class="left">
+        <ul class="top">
           {routes.map((route) => {
             return (
               <li>
@@ -15,7 +15,7 @@ export default {
           })}
         </ul>
 
-        <router-view class="right" />
+        <router-view class="center" />
       </div>
     );
   },

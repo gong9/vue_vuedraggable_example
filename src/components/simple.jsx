@@ -1,4 +1,5 @@
 import draggable from "vuedraggable";
+import Sortable from 'sortablejs'
 
 export default {
   data() {
@@ -14,12 +15,20 @@ export default {
     draggable,
   },
   render(h) {
+    for (var i = 0; i < this.list.length; i++) {
+      console.log(new Sortable(this.list[i], {
+        group: 'nested',
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+      }));
+    }
     return (
       <div>
-        <div>{this.list.map(item=>item.name)}</div>
-        <draggable list={this.list}>
+        <div>{this.list.map(item => item.name)}</div>
+        <draggable tag="ul" list={this.list}>
           {this.list.map((item) => (
-            <div>{item.id}</div>
+            <li>{item.id}</li>
           ))}
         </draggable>
       </div>
