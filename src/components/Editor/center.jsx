@@ -24,10 +24,10 @@ export default {
         renderChunk(schema, index, list) {
             const { type, label } = schema;
             return (
-                <el-form-item label={label} class='chunk-node'>
+                <el-form-item label={label} class='chunk-node' >
                     <el-row gutter={20}>
                         <el-col span={19} class="cover">
-                            <div class="cover-box" onClick={(e) => { e.stopPropagation; this.handleClickNode(schema) }} />
+                            <div class="cover-box" />
                             <type />
                         </el-col>
                         <el-col span={1}>
@@ -49,7 +49,7 @@ export default {
             switch (type) {
                 default:
                     return (
-                        <div class='container-node-outside' onClick={(e) => { e.stopPropagation; this.handleClickNode(containerNode) }} >
+                        <div class='container-node-outside' >
                             <el-row gutter={20}>
                                 <el-col span={19} class="cover">
                                     <nestedDraggable tag="div" tasks={children} />
@@ -93,7 +93,7 @@ export default {
             >
                 {this.tasks.map((task, index) => {
                     return (
-                        <div>
+                        <div onClick={(e) => { e.stopPropagation(); this.handleClickNode(task); }}>
                             {task.children ? (
                                 this.renderContainer(task, index, this.tasks)
                             ) : (

@@ -49,16 +49,25 @@ export default {
         return (
             <div class='right-config'>
                 <el-card>
-                    <el-tabs vModel={this.activeName} >
-                        <el-tab-pane label="组件属性" name="component-config">
-                            {
-                                this.renderConfig(this.currentSchema)
-                            }
-                        </el-tab-pane>
-                        <el-tab-pane label="表单属性" name="form-config">
-                            表单属性
-                        </el-tab-pane>
-                    </el-tabs>
+                    {
+                        Object.keys(this.currentSchema).length > 0
+                            ?
+                            (
+                                <el-tabs vModel={this.activeName} >
+                                    <el-tab-pane label="组件属性" name="component-config">
+                                        {
+                                            this.renderConfig(this.currentSchema)
+                                        }
+                                    </el-tab-pane>
+                                    <el-tab-pane label="表单属性" name="form-config">
+                                        表单属性
+                                    </el-tab-pane>
+                                </el-tabs>
+                            )
+                            :
+                            (<div>暂无配置项</div>)
+                    }
+
                 </el-card>
             </div>
         )

@@ -61,6 +61,15 @@ export default {
             type: "el-input",
             name: "radio",
             label: "输入框",
+            config: {
+              name: {
+                component: 'el-input',
+                label: '组件唯一值'
+              }
+            },
+            currentConfigValue: {
+              name: 'chunk'
+            }
           },
           {
             type: "el-time-picker",
