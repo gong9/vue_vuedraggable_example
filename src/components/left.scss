@@ -1,15 +1,20 @@
 .snapshot-container {
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
 
     .snapshot {
-        width: 50%;
-        height: 50px;
+        width: 45%;
+        height: 40px;
         background-color: rgb(140, 197, 255);
         border-radius: 4px;
         margin: 3px 5px;
         font-size: 14px;
         text-align: center;
-        line-height: 50px;
+        line-height: 40px;
     }
+}
+
+.snapshot-group-title {
+    margin-left: 4px;
 }

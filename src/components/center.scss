@@ -1,20 +1,20 @@
 .nested-example {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 90vh;
     min-height: 600px;
     .left {
         border: 1px solid royalblue;
-        flex: 2
+        flex: 1
     }
 
     .center {
         border: 1px solid royalblue;
-        flex: 8
+        flex: 5
     }
 
     .right {
         border: 1px solid royalblue;
-        flex: 2
+        flex: 1
     }
 }

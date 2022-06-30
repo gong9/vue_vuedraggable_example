@@ -37,14 +37,13 @@ export default {
         <draggable
           tag="div"
           list={this.tasks}
-          class="container-node"
           group={{ put: true }}
         >
           {this.tasks.map((task) => {
             return (
               <div>
                 {task.children ? (
-                  <nestedDraggable tag="div" tasks={task.children} />
+                  <nestedDraggable  class="container-node" tag="div" tasks={task.children} />
                 ) : (
                   this.renderChunk(task)
                 )}
