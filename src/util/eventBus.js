@@ -1,7 +1,7 @@
 class EventEmitter {
-    constructor() {
-        this.cache = {}
-    }
+  constructor() {
+    this.cache = {}
+  }
 
     /**
      * 订阅
@@ -9,7 +9,7 @@ class EventEmitter {
      * @param {function} fn
      */
     on = (name, fn) => {
-        this.cache[name] = fn
+      this.cache[name] = fn
     };
 
     /**
@@ -17,7 +17,7 @@ class EventEmitter {
      * @param {string} eventname
      */
     emit = (name, ...args) => {
-        if (this.cache[name]) this.cache[name](...args)
+      if (this.cache[name]) this.cache[name](...args)
     };
 
     /**
@@ -26,13 +26,13 @@ class EventEmitter {
      * @param {function} fn
      */
     off = (name, fn) => {
-        const tasks = this.cache[name]
-        if (tasks) {
-            const index = tasks.findIndex((f) => f === fn || f.callback === fn)
-            if (index >= 0) {
-                tasks.splice(index, 1)
-            }
+      const tasks = this.cache[name]
+      if (tasks) {
+        const index = tasks.findIndex((f) => f === fn || f.callback === fn)
+        if (index >= 0) {
+          tasks.splice(index, 1)
         }
+      }
     };
 }
 

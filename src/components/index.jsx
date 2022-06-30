@@ -1,92 +1,92 @@
-import nestedDraggable from "./Editor/center";
-import left from "./left";
-import right from "./right";
-import "./index.scss";
+import nestedDraggable from './Editor/center'
+import left from './left'
+import right from './right'
+import './index.scss'
 export default {
+  components: {
+    nestedDraggable,
+    left
+  },
   data() {
     return {
       allComponents: {
         container: [
           {
-            type: "block",
-            name: "block",
+            type: 'block',
+            name: 'block',
             children: [],
-            label: "block",
+            label: 'block'
           },
           {
-            type: "rule",
-            name: "rule",
+            type: 'rule',
+            name: 'rule',
             children: [],
-            label: "rule",
+            label: 'rule'
           },
           {
-            type: "task",
-            name: "task",
+            type: 'task',
+            name: 'task',
             children: [],
-            label: "task",
+            label: 'task'
           },
           {
-            type: "step",
-            name: "step",
+            type: 'step',
+            name: 'step',
             children: [],
-            label: "step",
-          },
+            label: 'step'
+          }
         ],
         baseChunk: [
           {
-            type: "el-input",
-            name: "radio",
-            label: "输入框",
+            type: 'el-input',
+            name: 'radio',
+            label: '输入框'
           },
           {
-            type: "el-time-picker",
-            name: "radio1",
-            label: "时间选择",
+            type: 'el-time-picker',
+            name: 'radio1',
+            label: '时间选择'
           },
           {
-            type: "el-select",
-            name: "select",
-            label: "下拉框",
+            type: 'el-select',
+            name: 'select',
+            label: '下拉框'
           },
           {
-            type: "el-switch",
-            name: "swict",
-            label: "开关",
+            type: 'el-switch',
+            name: 'swict',
+            label: '开关'
           },
           {
-            type: "el-slider",
-            name: "slider",
-            label: "滑块",
-          },
-        ],
+            type: 'el-slider',
+            name: 'slider',
+            label: '滑块'
+          }
+        ]
       },
       list: [
         {
-          type: "block",
-          name: "block",
+          type: 'block',
+          name: 'block',
           children: [],
-          label: "block",
-        },
-      ],
-    };
-  },
-  components: {
-    nestedDraggable,
-    left,
+          label: 'block'
+        }
+      ]
+    }
   },
   render(h) {
     return (
-      <div class="nested-example">
-        <div class="left">
+      <div class='nested-example'>
+        <div class='left'>
           <left data={this.allComponents} />
         </div>
-        <div class="center">
+        <div class='center'>
           <nestedDraggable tasks={this.list} />
         </div>
-        <div class="right">
+        <div class='right'>
           <right />
         </div>
       </div>
-    );
-  },
-};
+    )
+  }
+}

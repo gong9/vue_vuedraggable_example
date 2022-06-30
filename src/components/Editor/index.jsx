@@ -1,19 +1,24 @@
-import nestedDraggable from "./center";
-import left from "./left";
-import right from "./right";
+import nestedDraggable from './center'
+import left from './left'
+import right from './right'
 
-import "./index.scss";
+import './index.scss'
 
 export default {
+  components: {
+    nestedDraggable,
+    left,
+    right
+  },
   data() {
     return {
       allComponents: {
         container: [
           {
-            type: "block",
-            name: "block",
+            type: 'block',
+            name: 'block',
             children: [],
-            label: "block",
+            label: 'block',
             config: {
               name: {
                 component: 'el-input',
@@ -35,32 +40,32 @@ export default {
             }
           },
           {
-            type: "rule",
-            name: "rule",
+            type: 'rule',
+            name: 'rule',
             children: [],
-            label: "rule",
+            label: 'rule',
             config: {}
           },
           {
-            type: "task",
-            name: "task",
+            type: 'task',
+            name: 'task',
             children: [],
-            label: "task",
+            label: 'task',
             config: {}
           },
           {
-            type: "step",
-            name: "step",
+            type: 'step',
+            name: 'step',
             children: [],
-            label: "step",
+            label: 'step',
             config: {}
-          },
+          }
         ],
         baseChunk: [
           {
-            type: "el-input",
-            name: "radio",
-            label: "输入框",
+            type: 'el-input',
+            name: 'radio',
+            label: '输入框',
             config: {
               name: {
                 component: 'el-input',
@@ -72,50 +77,45 @@ export default {
             }
           },
           {
-            type: "el-time-picker",
-            name: "radio1",
-            label: "时间选择",
+            type: 'el-time-picker',
+            name: 'radio1',
+            label: '时间选择'
           },
           {
-            type: "el-select",
-            name: "select",
-            label: "下拉框",
+            type: 'el-select',
+            name: 'select',
+            label: '下拉框'
           },
           {
-            type: "el-switch",
-            name: "swict",
-            label: "开关",
+            type: 'el-switch',
+            name: 'swict',
+            label: '开关'
           },
           {
-            type: "el-slider",
-            name: "slider",
-            label: "滑块",
-          },
-        ],
+            type: 'el-slider',
+            name: 'slider',
+            label: '滑块'
+          }
+        ]
       },
-      list: [],
-    };
-  },
-  components: {
-    nestedDraggable,
-    left,
-    right
+      list: []
+    }
   },
   render(h) {
     return (
-      <div class="nested-example">
-        <div class="left">
+      <div class='nested-example'>
+        <div class='left'>
           <left data={this.allComponents} />
         </div>
-        <div class="center">
-          <el-form label-width="80px">
+        <div class='center'>
+          <el-form label-width='80px'>
             <nestedDraggable tasks={this.list} />
           </el-form>
         </div>
-        <div class="right">
+        <div class='right'>
           <right />
         </div>
       </div>
-    );
-  },
-};
+    )
+  }
+}
