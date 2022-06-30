@@ -14,13 +14,6 @@ export default {
     }
   },
   methods: {
-    /**
-         * chunk渲染
-         * @param {object} schema
-         * @param {number} index
-         * @param {array} list
-         * @returns
-         */
     renderChunk(schema, index, list) {
       const { type, label } = schema
       return (
@@ -38,11 +31,6 @@ export default {
       )
     },
 
-    /**
-         * 容器节点渲染
-         * @param {object} containerNode
-         * @returns
-         */
     renderContainer(containerNode, index, list) {
       const { type, children } = containerNode
 
@@ -64,19 +52,10 @@ export default {
       }
     },
 
-    /**
-         * 处理节点点击
-         * @param {object} data
-         */
     handleClickNode(data) {
       eventBus.emit('setConfig', data)
     },
 
-    /**
-         * 节点删除
-         * @param {array} list
-         * @param {number} index
-         */
     handleDelete(list, index) {
       list.splice(index, 1)
     }
