@@ -17,12 +17,21 @@ export default {
             config: {
               name: {
                 component: 'el-input',
-                type: 'string',
                 label: '容器名称'
+              },
+              isCanvas: {
+                component: 'el-switch',
+                label: '是否设为画布'
+              },
+              isSort: {
+                component: 'el-switch',
+                label: 'chunk是否排序'
               }
             },
             currentConfigValue: {
-              name: 'block'
+              name: 'block',
+              isCanvas: false,
+              isSort: false
             }
           },
           {
@@ -75,14 +84,7 @@ export default {
           },
         ],
       },
-      list: [
-        {
-          type: "block",
-          name: "block",
-          children: [],
-          label: "block",
-        },
-      ],
+      list: [],
     };
   },
   components: {
@@ -97,7 +99,9 @@ export default {
           <left data={this.allComponents} />
         </div>
         <div class="center">
-          <nestedDraggable tasks={this.list} />
+          <el-form label-width="80px">
+            <nestedDraggable tasks={this.list} />
+          </el-form>
         </div>
         <div class="right">
           <right />

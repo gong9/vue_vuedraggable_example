@@ -6,16 +6,20 @@
 
     .left {
         border: 1px solid royalblue;
-        flex: 1
+        flex: 2
     }
 
     .center {
-        border: 1px solid royalblue;
-        flex: 4
+        box-sizing: border-box;
+        padding: 5px 5px;
+        border-top: 1px solid royalblue;
+        border-bottom: 1px solid royalblue;
+        flex: 4;
+        overflow: hidden;
     }
 
     .right {
         border: 1px solid royalblue;
-        flex: 1.5
+        flex: 2
     }
 }

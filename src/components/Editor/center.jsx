@@ -14,16 +14,22 @@ export default {
         draggable,
     },
     methods: {
+        /**
+         * chunk渲染
+         * @param {object} schema 
+         * @param {number} index 
+         * @param {array} list 
+         * @returns 
+         */
         renderChunk(schema, index, list) {
             const { type, label } = schema;
             return (
                 <el-form-item label={label} class='chunk-node'>
                     <el-row gutter={20}>
                         <el-col span={19} class="cover">
-                            <div class="cover-box" onClick={() => this.handleClickNode(schema)} />
+                            <div class="cover-box" onClick={(e) => { e.stopPropagation; this.handleClickNode(schema) }} />
                             <type />
                         </el-col>
-
                         <el-col span={1}>
                             <el-button type="info" plain icon="el-icon-delete" onClick={() => this.handleDelete(list, index)}></el-button>
                         </el-col>
@@ -31,61 +37,72 @@ export default {
                 </el-form-item>
             );
         },
-        renderContainer(containerNode) {
+
+        /**
+         * 容器节点渲染
+         * @param {object} containerNode 
+         * @returns 
+         */
+        renderContainer(containerNode, index, list) {
             const { type, children } = containerNode
 
             switch (type) {
-                case 'step':
-                    return (
-                        <div>
-                            <el-steps >
-                                <el-step title="步骤 1"></el-step>
-                                <el-step title="步骤 2"></el-step>
-                                <el-step title="步骤 3"></el-step>
-                            </el-steps>
-                            <nestedDraggable tag="div" tasks={children} />
-                        </div>
-                    )
-
                 default:
                     return (
-                        <div onClick={() => this.handleClickNode(containerNode)}>
-                            <nestedDraggable tag="div" tasks={children} />
+                        <div class='container-node-outside' onClick={(e) => { e.stopPropagation; this.handleClickNode(containerNode) }} >
+                            <el-row gutter={20}>
+                                <el-col span={19} class="cover">
+                                    <nestedDraggable tag="div" tasks={children} />
+                                </el-col>
+                                <el-col span={1}>
+                                    <el-button type="info" plain icon="el-icon-delete" onClick={() => this.handleDelete(list, index)}></el-button>
+                                </el-col>
+                            </el-row>
+
                         </div>
                     )
             }
 
         },
+
+        /**
+         * 处理节点点击
+         * @param {object} data 
+         */
         handleClickNode(data) {
             eventBus.emit('setConfig', data)
         },
+
+        /**
+         * 节点删除
+         * @param {array} list 
+         * @param {number} index 
+         */
         handleDelete(list, index) {
             list.splice(index, 1)
         }
     },
     render(h) {
         return (
-            <el-form label-width="80px">
-                <draggable
-                    tag="div"
-                    class="container-node"
-                    list={this.tasks}
-                    group={{ put: true }}
-                    scrollSensitivity="10px"
-                >
-                    {this.tasks.map((task, index) => {
-                        return (
-                            <div>
-                                {task.children ? (
-                                    this.renderContainer(task)
-                                ) : (
-                                    this.renderChunk(task, index, this.tasks)
-                                )}
-                            </div>
-                        );
-                    })}
-                </draggable>
-            </el-form>
+            <draggable
+                tag="div"
+                class="container-node"
+                list={this.tasks}
+                group={{ put: true }}
+                scrollSensitivity="10px"
+            >
+                {this.tasks.map((task, index) => {
+                    return (
+                        <div>
+                            {task.children ? (
+                                this.renderContainer(task, index, this.tasks)
+                            ) : (
+                                this.renderChunk(task, index, this.tasks)
+                            )}
+                        </div>
+                    );
+                })}
+            </draggable>
         );
     },
 };
