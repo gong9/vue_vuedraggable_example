@@ -22,7 +22,7 @@ export default {
           return (
             <div class="components">
               <h4 class="snapshot-group-title">
-                <i class="el-icon-potato-strips" />{" "}
+                <i class="el-icon-potato-strips" />
                 {itemKey === "container" ? "容器组件" : "基础组件"}
               </h4>
               <draggable

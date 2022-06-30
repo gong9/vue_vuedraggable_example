@@ -14,7 +14,7 @@ export default {
         draggable,
     },
     methods: {
-        renderChunk(schema) {
+        renderChunk(schema, index, list) {
             const { type, label } = schema;
             return (
                 <el-form-item label={label} class='chunk-node'>
@@ -25,7 +25,7 @@ export default {
                         </el-col>
 
                         <el-col span={1}>
-                            <el-button type="info" plain icon="el-icon-delete"></el-button>
+                            <el-button type="info" plain icon="el-icon-delete" onClick={() => this.handleDelete(list, index)}></el-button>
                         </el-col>
                     </el-row>
                 </el-form-item>
@@ -43,14 +43,14 @@ export default {
                                 <el-step title="步骤 2"></el-step>
                                 <el-step title="步骤 3"></el-step>
                             </el-steps>
-                            <nestedDraggable class="container-node" tag="div" tasks={children} />
+                            <nestedDraggable tag="div" tasks={children} />
                         </div>
                     )
 
                 default:
                     return (
                         <div onClick={() => this.handleClickNode(containerNode)}>
-                            <nestedDraggable class="container-node" tag="div" tasks={children} />
+                            <nestedDraggable tag="div" tasks={children} />
                         </div>
                     )
             }
@@ -58,6 +58,9 @@ export default {
         },
         handleClickNode(data) {
             eventBus.emit('setConfig', data)
+        },
+        handleDelete(list, index) {
+            list.splice(index, 1)
         }
     },
     render(h) {
@@ -65,16 +68,18 @@ export default {
             <el-form label-width="80px">
                 <draggable
                     tag="div"
+                    class="container-node"
                     list={this.tasks}
                     group={{ put: true }}
+                    scrollSensitivity="10px"
                 >
-                    {this.tasks.map((task) => {
+                    {this.tasks.map((task, index) => {
                         return (
                             <div>
                                 {task.children ? (
                                     this.renderContainer(task)
                                 ) : (
-                                    this.renderChunk(task)
+                                    this.renderChunk(task, index, this.tasks)
                                 )}
                             </div>
                         );
