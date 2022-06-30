@@ -1,6 +1,7 @@
-import nestedDraggable from "./nested-draggable";
+import nestedDraggable from "./Editor/center";
 import left from "./left";
-import "./center.scss";
+import right from "./right";
+import "./index.scss";
 export default {
   data() {
     return {
@@ -82,7 +83,9 @@ export default {
         <div class="center">
           <nestedDraggable tasks={this.list} />
         </div>
-        <div class="right" />
+        <div class="right">
+          <right />
+        </div>
       </div>
     );
   },

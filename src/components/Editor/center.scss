@@ -4,6 +4,7 @@
     width: 80%;
     min-height: 50px;
     position: relative;
+    cursor: move;
 }
 
 .cover {
@@ -17,6 +18,10 @@
         height: 100%;
         z-index: 99;
     }
+}
+
+.chunk-node {
+    cursor: move;
 }
 
 .init-class {
