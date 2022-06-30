@@ -1,91 +1,46 @@
 import nestedDraggable from './Editor/center'
-import left from './left'
-import right from './right'
+import left from './Editor/left'
+import right from './Editor/right'
+
 import './index.scss'
+
 export default {
   components: {
     nestedDraggable,
-    left
+    left,
+    right
+  },
+  props: {
+    allComponents: {
+      type: Object,
+      default: () => {}
+    }
   },
   data() {
     return {
-      allComponents: {
-        container: [
-          {
-            type: 'block',
-            name: 'block',
-            children: [],
-            label: 'block'
-          },
-          {
-            type: 'rule',
-            name: 'rule',
-            children: [],
-            label: 'rule'
-          },
-          {
-            type: 'task',
-            name: 'task',
-            children: [],
-            label: 'task'
-          },
-          {
-            type: 'step',
-            name: 'step',
-            children: [],
-            label: 'step'
-          }
-        ],
-        baseChunk: [
-          {
-            type: 'el-input',
-            name: 'radio',
-            label: '输入框'
-          },
-          {
-            type: 'el-time-picker',
-            name: 'radio1',
-            label: '时间选择'
-          },
-          {
-            type: 'el-select',
-            name: 'select',
-            label: '下拉框'
-          },
-          {
-            type: 'el-switch',
-            name: 'swict',
-            label: '开关'
-          },
-          {
-            type: 'el-slider',
-            name: 'slider',
-            label: '滑块'
-          }
-        ]
-      },
-      list: [
-        {
-          type: 'block',
-          name: 'block',
-          children: [],
-          label: 'block'
-        }
-      ]
+      list: []
     }
   },
   render(h) {
     return (
-      <div class='nested-example'>
-        <div class='left'>
-          <left data={this.allComponents} />
+      <div class='editor'>
+        <div class='editor-top'>
+          布局编辑器
         </div>
-        <div class='center'>
-          <nestedDraggable tasks={this.list} />
+        <div class='editor-main'>
+          <div class='left'>
+            <left data={this.allComponents} />
+          </div>
+          <div class='center'>
+            <el-form label-width='80px'>
+              <nestedDraggable tasks={this.list} />
+            </el-form>
+          </div>
+          <div class='right'>
+            <right />
+          </div>
         </div>
-        <div class='right'>
-          <right />
-        </div>
+
       </div>
     )
   }
