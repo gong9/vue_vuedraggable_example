@@ -9,6 +9,7 @@ specifiers:
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.0.0
   eslint-plugin-vue: 7.0.0
+  lodash: ^4.17.21
   monaco-editor: ^0.31.1
   sass: ^1.53.0
   vite: ^2.9.9
@@ -19,6 +20,7 @@ specifiers:
 
 dependencies:
   element-ui: registry.npmmirror.com/element-ui/2.15.9_vue@2.6.14
+  lodash: 4.17.21
   monaco-editor: 0.31.1
   vue: 2.6.14
   vuedraggable: 2.24.3
@@ -33,7 +35,7 @@ devDependencies:
   eslint-plugin-vue: 7.0.0_eslint@6.7.2
   sass: 1.53.0
   vite: 2.9.13_sass@1.53.0
-  vite-plugin-vue2: 2.0.1_rjze3w2zsgj4z24tnggj7hdbyq
+  vite-plugin-vue2: 2.0.1_mwrdycdazdijkb6vit7skecbqa
   vue-template-compiler: 2.6.14
 
 packages:
@@ -636,10 +638,10 @@ packages:
       camelcase: 5.3.1
     dev: true
 
-  /@vue/component-compiler-utils/3.3.0:
+  /@vue/component-compiler-utils/3.3.0_lodash@4.17.21:
     resolution: {integrity: sha512-97sfH2mYNU+2PzGrmK2haqffDpVASuib9/w2/noxiFi31Z54hW+q3izKQXXQZSNhtiUpAI36uSuYepeBe4wpHQ==}
     dependencies:
-      consolidate: 0.15.1
+      consolidate: 0.15.1_lodash@4.17.21
       hash-sum: 1.0.2
       lru-cache: 4.1.5
       merge-source-map: 1.1.0
@@ -948,7 +950,7 @@ packages:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
 
-  /consolidate/0.15.1:
+  /consolidate/0.15.1_lodash@4.17.21:
     resolution: {integrity: sha512-DW46nrsMJgy9kqAbPt5rKaCr7uFtpo4mSUvLHIUbJEjm0vo+aY5QLwBUq3FK4tRnJr/X0Psc0C4jf/h+HtXSMw==}
     engines: {node: '>= 0.10.0'}
     peerDependencies:
@@ -1114,9 +1116,10 @@ packages:
         optional: true
     dependencies:
       bluebird: 3.7.2
+      lodash: 4.17.21
     dev: true
 
-  /consolidate/0.16.0:
+  /consolidate/0.16.0_lodash@4.17.21:
     resolution: {integrity: sha512-Nhl1wzCslqXYTJVDyJCu3ODohy9OfBMB5uD2BiBTzd7w+QY0lBzafkR8y8755yMYHAaMD4NuzbAw03/xzfw+eQ==}
     engines: {node: '>= 0.10.0'}
     peerDependencies:
@@ -1282,6 +1285,7 @@ packages:
         optional: true
     dependencies:
       bluebird: 3.7.2
+      lodash: 4.17.21
     dev: true
 
   /contains-path/0.1.0:
@@ -2390,7 +2394,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=}
-    dev: true
 
   /lru-cache/4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
@@ -3080,7 +3083,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-vue2/2.0.1_rjze3w2zsgj4z24tnggj7hdbyq:
+  /vite-plugin-vue2/2.0.1_mwrdycdazdijkb6vit7skecbqa:
     resolution: {integrity: sha512-8ixcIDZwk3PSbdaqKrPFYDot044lPLIqpjjuRXUDHdRhml87Kbc6JqLq6uwHERlPovwfI3DpluWRMVgn/Llmag==}
     peerDependencies:
       vite: ^2.0.0
@@ -3103,8 +3106,8 @@ packages:
       '@rollup/pluginutils': 4.2.1
       '@vue/babel-helper-vue-jsx-merge-props': 1.2.1
       '@vue/babel-preset-jsx': 1.2.4_@babel+core@7.18.6
-      '@vue/component-compiler-utils': 3.3.0
-      consolidate: 0.16.0
+      '@vue/component-compiler-utils': 3.3.0_lodash@4.17.21
+      consolidate: 0.16.0_lodash@4.17.21
       debug: 4.3.4
       fs-extra: 10.1.0
       hash-sum: 2.0.0

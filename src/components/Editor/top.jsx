@@ -1,4 +1,5 @@
 import MonacoEditor from '../MonacoEditor/index.jsx'
+import { filterUselessData } from '../../util'
 export default {
   props: {
     schema: {
@@ -12,9 +13,7 @@ export default {
     }
   },
   computed: {
-    schemaStr() {
-      return JSON.stringify(this.schema, null, 2)
-    }
+
   },
   methods: {
     openDrawer() {
@@ -43,7 +42,7 @@ export default {
             language='json'
             editorHight='100%'
             editorWidth='100%'
-            value={this.schemaStr}
+            value={JSON.stringify(filterUselessData(this.schema), null, 2)}
           />
         </el-drawer>
       </div>
