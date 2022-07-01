@@ -1,4 +1,5 @@
-import nestedDraggable from './Editor/center'
+import center from './Editor/center'
+import top from './Editor/top'
 import left from './Editor/left'
 import right from './Editor/right'
 
@@ -6,9 +7,10 @@ import './index.scss'
 
 export default {
   components: {
-    nestedDraggable,
+    center,
     left,
-    right
+    right,
+    top
   },
   props: {
     allComponents: {
@@ -24,16 +26,14 @@ export default {
   render(h) {
     return (
       <div class='editor'>
-        <div class='editor-top'>
-          布局编辑器
-        </div>
+        <top schema={this.list}/>
         <div class='editor-main'>
           <div class='left'>
             <left data={this.allComponents} />
           </div>
           <div class='center'>
             <el-form label-width='80px'>
-              <nestedDraggable tasks={this.list} />
+              <center tasks={this.list} />
             </el-form>
           </div>
           <div class='right'>

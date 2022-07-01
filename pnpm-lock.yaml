@@ -9,18 +9,18 @@ specifiers:
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.0.0
   eslint-plugin-vue: 7.0.0
+  monaco-editor: ^0.31.1
   sass: ^1.53.0
   vite: ^2.9.9
   vite-plugin-vue2: ^2.0.1
   vue: ^2.6.10
-  vue-router: ^3.5.4
   vue-template-compiler: ^2.6.10
   vuedraggable: ^2.24.3
 
 dependencies:
   element-ui: registry.npmmirror.com/element-ui/2.15.9_vue@2.6.14
+  monaco-editor: 0.31.1
   vue: 2.6.14
-  vue-router: 3.5.4
   vuedraggable: 2.24.3
 
 devDependencies:
@@ -2441,6 +2441,10 @@ packages:
       minimist: 1.2.6
     dev: true
 
+  /monaco-editor/0.31.1:
+    resolution: {integrity: sha512-FYPwxGZAeP6mRRyrr5XTGHD9gRXVjy7GUzF4IPChnyt3fS5WrNxIkS8DNujWf6EQy0Zlzpxw8oTVE+mWI2/D1Q==}
+    dev: false
+
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
     dev: true
@@ -3212,10 +3216,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /vue-router/3.5.4:
-    resolution: {integrity: sha512-x+/DLAJZv2mcQ7glH2oV9ze8uPwcI+H+GgTgTmb5I55bCgY3+vXWIsqbYUzbBSZnwFHEJku4eoaH/x98veyymQ==}
-    dev: false
 
   /vue-template-babel-compiler/1.2.0_ev5jzj74xu2fombjvobqpq452a:
     resolution: {integrity: sha512-CScBSX1/wCdmmZ/Lvj/63p2CCVTS0FMj0F69VRBo73CuJrjvPAPGmeNJ7D/cwt/VS2PduowRWbO8N4Zh4Z3b0g==}
